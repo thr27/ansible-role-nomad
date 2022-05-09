@@ -6,7 +6,8 @@ After=network-online.target
 
 [Service]
 ExecReload=/bin/kill -HUP $MAINPID
-ExecStart={{nomad_bin}} agent -config {{nomad_config_dir}}
+ExecStartPre={{ nomad_service_file_exec_pre_command }}
+ExecStart={{ nomad_service_file_exec_start_command }}
 KillMode=process
 KillSignal=SIGINT
 LimitNOFILE=infinity

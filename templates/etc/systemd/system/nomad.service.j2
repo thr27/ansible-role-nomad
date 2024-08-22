@@ -17,6 +17,8 @@ RestartSec={{nomad_service_file_restart_sec}}
 StartLimitBurst={{nomad_service_file_start_limit_burst}}
 StartLimitIntervalSec={{nomad_service_file_start_limit_interval_sec}}
 TasksMax=infinity
+StandardOutput=append:/var/log/nomad
+StandardError=append:/var/log/nomad
 
 [Install]
 WantedBy=multi-user.target

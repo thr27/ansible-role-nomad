@@ -17,7 +17,7 @@
     owner: "{{nomad_user}}"
     group: "{{nomad_group}}"
     mode: "0644"
-    #validate: "{{nomad_bin}} configtest -config-file {{nomad_config_dir}}/%s"
+    validate: "{{nomad_bin}} config validate %s"
   with_dict: "{{nomad_config}}"
   notify: nomad restart
 
